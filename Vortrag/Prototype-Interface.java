@@ -30,7 +30,7 @@ class Car implements Prototype {
 
 
 // 3️⃣ Client Code
-public class PrototypeDemo {
+public class Prototype-Interface {
     public static void main(String[] args) {
         Car original = new Car("Tesla Model S", "Red");
         Car copy = original.clone();
