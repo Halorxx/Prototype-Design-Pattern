@@ -77,6 +77,12 @@ class Car implements Prototype<Car> {
         return "Car{" + "model='" + model + '\'' + ", color='" + color + '\'' + '}';
     }
 }
+class SuperCar extends Car {
+    private int temp
+
+            clone
+
+}
 public class PrototypeDemo {
     public static void main(String[] args) {
         Car original = new Car("Tesla Model 3", "Blue");
