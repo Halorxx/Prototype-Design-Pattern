@@ -62,7 +62,7 @@ interface Prototype<T> {
     T copy();
 }
 class Car implements Prototype<Car> {
-    private String model;
+    protected String model;
     private String color;
     public Car(String model, String color) {
         this.model = model;
@@ -77,11 +77,26 @@ class Car implements Prototype<Car> {
         return "Car{" + "model='" + model + '\'' + ", color='" + color + '\'' + '}';
     }
 }
-class SuperCar extends Car {
-    private int temp
+class SuperCar extends Car implements Prototype<SuperCar> {
+    private int tempo;
 
-            clone
+    public SuperCar(String model, String color, int tempo) {
+    }
 
+    @java.lang.Override
+    public SuperCar copy() {
+        var car = super.copy();
+        var superCar = (SuperCar) car;
+        superCar.tempo = this.tempo;
+        return superCar;
+
+        // alternativ:
+        return new SuperCar(model)
+    }
+    @Override
+    public String toString() {
+        return "Car{" + "model='" + model + '\'' + ", color='" + color + '\'' + tempo '}';
+    }
 }
 public class PrototypeDemo {
     public static void main(String[] args) {
@@ -89,6 +104,10 @@ public class PrototypeDemo {
         Car copy = original.copy();
         System.out.println(original); // Car{model='Tesla Model 3', color='Blue'}
         System.out.println(copy);     // Car{model='Tesla Model 3', color='Blue'}
+
+        SuperCar originalSupercar = new SuperCar("Tesla Roadster" , "Rot", 300)
+        SuperCar copySupercar = originalSupercar.copy();
+        System.out.println(copySupercar);
     }
 }
 | Variante                   | Beschreibung           | Vorteil                      |
