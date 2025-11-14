@@ -34,11 +34,6 @@ public class PrototypeDemo {
     }
 }
 
-✅ Fazit
-
-✔️ Ja, das Interface Prototype<T> repräsentiert das Prototype Design Pattern in moderner, idiomatischer Form.
-Es ist konzeptionell identisch, nur technisch sauberer und typensicher umgesetzt als das alte Cloneable.
-
 // 🔹 Vorteil:
 
 // Gleiche Idee wie beim echten Prototype Pattern
@@ -46,7 +41,3 @@ Es ist konzeptionell identisch, nur technisch sauberer und typensicher umgesetzt
 // Der Client ruft nur prototype.copy() auf, ohne die Implementierung zu kennen
 
 // Du kannst Unterklassen überschreiben lassen, um spezialisierte Kopien zu erzeugen
-
-// 💡 Variante 3: Interface-basierte Lösung (modernes "Prototype-Interface")
-
-// Wenn du mehrere Klassen mit Kopierlogik hast, kannst du dir ein eigenes Interface definieren:
